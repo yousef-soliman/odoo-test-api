@@ -13,11 +13,12 @@ go to `http://localhost:8069`
 
 create database and install odoo api test
 
-image of install odoo api
+![install odoo api](screenshots/install-odoo-api.png)
 
 
 go to `http://localhost/swagger`
-image of swagger
+
+![swagger](screenshots/swagger.png)
 
 give it a try
 
