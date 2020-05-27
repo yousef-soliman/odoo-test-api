@@ -1,0 +1,247 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Odoo Test API",
+    "version": "1.0.0",
+    "title": "Odoo Test API",
+    "contact": {
+      "email": "yousef.soliman02@gmail.com"
+    }
+  },
+  "host": "localhost:8069",
+  "basePath": "/api/",
+  "tags": [
+    {
+      "name": "test",
+      "description": "Test"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/checkpartner": {
+      "post": {
+        "tags": [
+          "test"
+        ],
+        "summary": "Check Partner",
+        "description": "",
+        "operationId": "checkpartner",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "partner name",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "partner name",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "jsonrpc": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "result": {
+                  "type": "object",
+                  "properties": {
+                    "partner_id": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "432": {
+            "description": "partner name",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "jsonrpc": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "date": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/createInvoice": {
+      "post": {
+        "tags": [
+          "test"
+        ],
+        "summary": "Check Partner",
+        "description": "",
+        "operationId": "createInvoice",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "partner name",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "params": {
+                  "type": "object",
+                  "properties": {
+                    "partner_id": {
+                      "type": "integer"
+                    },
+                    "invoice_date": {
+                      "type": "string",
+                      "example": "2025-02-4 08:15:47"
+                    },
+                    "invoice_lines": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "product_id": {
+                            "type": "integer"
+                          },
+                          "account_id": {
+                            "type": "integer"
+                          },
+                          "qty": {
+                            "type": "integer"
+                          },
+                          "unit_price": {
+                            "type": "integer"
+                          },
+                          "description": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "partner name",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "jsonrpc": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "result": {
+                  "type": "object",
+                  "properties": {
+                    "invoice_id": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "432": {
+            "description": "partner name",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "jsonrpc": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "date": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "partner": {
+      "type": "object",
+      "properties": {
+        "jsonrpc": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "result": {
+          "type": "object",
+          "properties": {
+            "partner_id": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "object": {
+      "type": "object",
+      "properties": {
+        "params": {
+          "type": "object",
+          "properties": {
+            "partner": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
